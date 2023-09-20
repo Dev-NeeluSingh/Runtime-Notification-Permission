@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     String[] permissions = new String[]{Manifest.permission.POST_NOTIFICATIONS};            //string store which permission to check from manifest
     boolean permission_post_notification = false;                                           //to check notification permission is given or not
     private Button btn1;
-    private TextView txt1;
     private final ActivityResultLauncher<String> requestPermissionLauncherNotification = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {    // requesting to launch notification permission
         if (isGranted) {                                                                    //here checking notification permission granted or not
             permission_post_notification = true;                                            //performing task after permission granted
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         btn1 = findViewById(R.id.btn1);
-        txt1 = findViewById(R.id.txt1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
